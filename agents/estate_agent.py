@@ -8,10 +8,12 @@ from pydantic import BaseModel
 from dotenv import load_dotenv
 import uvicorn
 load_dotenv()
+if not os.getenv("ESTATE_AGENT_PRIVATE_KEY"):
+    print("WARNING: PRIVATE KEY NOT SET")
 
 ALGOD_URL  = os.getenv("ALGOD_URL", "https://testnet-api.algonode.cloud")
 ALGOD_TOKEN = os.getenv("ALGOD_TOKEN", "")
-APP_ID     = int(open(".app_id").read().strip())
+APP_ID = int(os.getenv("APP_ID", "0"))
 GRIEVANCE  = int(os.getenv("GRIEVANCE_SECONDS", "30"))
 
 app = FastAPI()
@@ -103,4 +105,4 @@ async def health():
     return {"status": "ok", "app_id": APP_ID}
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8001, reload=True)
+    uvicorn.run(app, host="0.0.0.0", port=10000)
