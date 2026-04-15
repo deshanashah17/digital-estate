@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const API = "";
+const API = "https://digital-estate-backend-84i2.onrender.com";
 const OWNER = "TN5PRWG2ZWPQRKMMF7WOVHRW4WESQHIU7M3OUAAVJ2CLQJRDMGJOHEF2NQ";
 
 type Theme = "dark" | "light";
