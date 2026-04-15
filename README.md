@@ -98,6 +98,7 @@ digital-estate/
 ├── requirements.txt            # Python dependencies
 └── README.md
 ```
+> 🔹 **Backend Entry Point:** The main backend service runs from `agents/estate_agent.py` (FastAPI server).
 
 ### 📌 Important Notes on Code Generation
 
