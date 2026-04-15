@@ -72,7 +72,7 @@ async def report_death(req: DeathRequest):
     if not will_data:
         return {"error": "No will created yet. Create a will first."}
     print(f"[Estate] Death reported for {req.owner_address}")
-    asyncio.create_task(auto_execute())
+    await auto_execute()
     return {"status": "death_reported", "tx_id": "death_" + req.owner_address[:8], "grievance_seconds": GRIEVANCE}
 
 async def auto_execute():
